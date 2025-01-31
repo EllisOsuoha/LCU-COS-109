@@ -1,0 +1,402 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Spartan', sans-serif;
+    line-height: 1.6;
+    background-color: #1a1a1a;
+    color: #f2e9e4;
+    padding-top: 300px; /* Add padding to body to account for sticky header */
+}
+
+/* Sticky Header Styles */
+header {
+    background: linear-gradient(135deg, rgba(34, 34, 59, 0.6), rgba(74, 78, 105, 0.6)), url(ShootingStar_Donated_JordanReed.jpg);
+    background-size: cover;
+    background-position: center;
+    color: #f2e9e4;
+    padding: 30px 0;
+    text-align: center;
+    margin: 10px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    height: 300px;
+    font-size: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    position: fixed; /* Make the header sticky */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Ensure the header stays above other content */
+    transition: all 0.3s ease; /* Smooth transition for size reduction */
+}
+
+/* Reduce header size on scroll */
+header.shrink {
+    height: 100px; /* Reduced height */
+    padding: 10px 0; /* Reduced padding */
+    font-size: 20px; /* Reduced font size */
+}
+
+header.shrink h1 {
+    padding-top: 20px; /* Adjusted padding for smaller header */
+    font-size: 2rem; /* Reduced font size */
+}
+
+header.shrink nav ul {
+    padding: 10px 0; /* Reduced padding */
+    
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+header h1 {
+    padding-top: 80px;
+    position: relative;
+    z-index: 2;
+    font-size: 3rem;
+    animation: fadeIn 2s ease-in-out;
+    transition: all 0.3s ease; /* Smooth transition for size reduction */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Navigation Styles */
+/* Navigation Styles */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 30px 0;
+    position: relative;
+    z-index: 2;
+    transition: all 0.3s ease; /* Smooth transition for size reduction */
+}
+
+nav ul.hidden {
+    display: none; /* Hide the ul when the 'hidden' class is added */
+}
+
+/* Other styles remain the same */
+
+
+nav ul li a {
+    color: #f2e9e4;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+nav ul li a:hover {
+    color: #5f9ea0;
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-3px);
+}
+
+/* Vertical Line Separator */
+nav ul li.separator {
+    color: #f2e9e4;
+    font-size: 20px;
+    font-weight: 300;
+    margin: 0 10px;
+    pointer-events: none;
+}
+
+/* Section Styles */
+section {
+    padding: 40px;
+    background: rgba(34, 34, 34, 0.8);
+    margin: 30px auto;
+    max-width: 1000px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+}
+
+#about, #projects, #contact {
+    background: rgba(95, 158, 160, 0.1);
+    padding: 30px;
+    border-radius: 15px;
+}
+
+#about p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #f2e9e4;
+}
+
+#about strong {
+    color: #5f9ea0;
+}
+
+/* Center "Projects" Heading */
+#projects h2 {
+    text-align: center; /* Center the heading */
+    padding: 15px 0;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    margin-bottom: 30px;
+    font-size: 2rem;
+    color: #5f9ea0;
+}
+
+/* Project Grid Styles */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.project-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 25px;
+    border-radius: 15px;
+    text-decoration: none;
+    color: #f2e9e4;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.project-card:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+}
+
+.project-card h3 {
+    font-size: 1.75rem;
+    color: #5f9ea0;
+    margin-bottom: 15px;
+}
+
+.project-card p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Footer Styles */
+footer {
+    background: linear-gradient(135deg, #22223b, #4a4e69);
+    color: #fff;
+    text-align: center;
+    padding: 25px 0;
+    margin-top: 40px;
+    border-radius: 15px 15px 0 0;
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.3);
+}
+
+footer p {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.social-links {
+    margin-top: 15px;
+}
+
+.social-links a {
+    color: #f2e9e4;
+    margin: 0 15px;
+    font-size: 1.75rem;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #5f9ea0;
+}
+
+/* Button Styles */
+button {
+    background-color: #5f9ea0;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    font-size: 1.1rem;
+}
+
+button:hover {
+    background-color: #4a4e69;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin: 15px 0 10px;
+    font-size: 1.1rem;
+    color: #f2e9e4;
+}
+
+form input, form textarea {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #f2e9e4;
+    font-size: 1.1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+form input:focus, form textarea:focus {
+    border-color: #5f9ea0;
+    outline: none;
+    box-shadow: 0 0 10px rgba(95, 158, 160, 0.5);
+}
+/* Sticky Header Styles */
+header {
+    background: linear-gradient(135deg, rgba(34, 34, 59, 0.6), rgba(74, 78, 105, 0.6)), url(ShootingStar_Donated_JordanReed.jpg);
+    background-size: cover;
+    background-position: center;
+    color: #f2e9e4;
+    padding: 30px 0;
+    text-align: center;
+    margin: 10px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    height: 300px;
+    font-size: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    position: fixed; /* Make the header sticky */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Ensure the header stays above other content */
+    transition: all 0.3s ease; /* Smooth transition for size reduction */
+}
+
+/* Reduce header size on scroll */
+header.shrink {
+    height: 80px; /* Reduced height */
+    padding: 10px 0; /* Reduced padding */
+    font-size: 18px; /* Reduced font size */
+}
+
+header.shrink h1 {
+    padding-top: 10px; /* Adjusted padding for smaller header */
+    font-size: 1.5rem; /* Reduced font size */
+}
+
+header.shrink nav ul {
+    padding: 5px 0; /* Reduced padding */
+}
+
+header.shrink nav ul li {
+    margin: 0 15px; /* Reduced spacing between list items */
+}
+
+header.shrink nav ul li a {
+    font-size: 16px; /* Reduced font size */
+    padding: 5px 10px; /* Reduced padding */
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+header h1 {
+    padding-top: 80px;
+    position: relative;
+    z-index: 2;
+    font-size: 3rem;
+    animation: fadeIn 2s ease-in-out;
+    transition: all 0.3s ease; /* Smooth transition for size reduction */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Navigation Styles */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 30px 0;
+    position: relative;
+    z-index: 2;
+    transition: all 0.3s ease; /* Smooth transition for size reduction */
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: #f2e9e4;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+nav ul li a:hover {
+    color: #5f9ea0;
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-3px);
+}
+
+/* Vertical Line Separator */
+nav ul li.separator {
+    color: #f2e9e4;
+    font-size: 20px;
+    font-weight: 300;
+    margin: 0 10px;
+    pointer-events: none;
+    transition: all 0.3s ease; /* Smooth transition for size reduction */
+}
+
+header.shrink nav ul li.separator {
+    font-size: 16px; /* Reduced font size */
+}
